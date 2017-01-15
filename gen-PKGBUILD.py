@@ -14,12 +14,12 @@ pkgrel = 1
 pkgver = "{0}.{1}".format(pkgver_base, pkgver_build)
 
 url_ref="https://support.amd.com/en-us/kb-articles/Pages/AMD-Radeon-GPU-PRO-Linux-Beta-Driver%E2%80%93Release-Notes.aspx"
-dlagents="https::/usr/bin/wget --referer {0} -N %u".format(url_ref)
+dlagents="https::wget --referer {0} -N %u".format(url_ref)
 
 source_name = "amdgpu-pro-{0}-{1}".format(pkgver_base, pkgver_build)
 source_url = "https://www2.ati.com/drivers/linux/ubuntu/{0}.tar.xz".format(source_name)
 
-subprocess.run(["/usr/bin/wget", "--referer", url_ref, "-N", source_url])
+subprocess.run(["wget", "--referer", url_ref, "-N", source_url])
 source_file = "{0}.tar.xz".format(source_name)
 
 def hashFile(file):
